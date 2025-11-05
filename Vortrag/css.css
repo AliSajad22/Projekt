@@ -1,0 +1,36 @@
+/* das ist ohne Atomic -d */
+.search-container label {
+  text-transform: uppercase;
+  color: black;
+}
+
+.search-container input {
+  background: black;
+  padding: 10px;
+}
+
+.search-container a {
+  padding: 10px;
+  background: orange;
+  color: white;
+}
+
+/* Das funktioniert nicht wiederverwendbare weil ich jedes mal container benötige */
+
+/* das ist mit Atomic -d */
+label {
+  text-transform: uppercase;
+  color: black;
+}
+
+input {
+  background: black;
+  padding: 10px;
+}
+
+.btn {
+  padding: 10px;
+  background: orange;
+  color: white;
+}
+/* das ist aber modular und wiederverwendebare */

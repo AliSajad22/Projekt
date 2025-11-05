@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  /* Real Colors */
+  --color-classic-rose: #fac8eb;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Abstract Colors */
+  --color-brand-primary: var(--color-Classic-Rose);
+  --color-dark: var(--color-black);
+  --color-light: var(--color-white);
+
+  /* Distances */
+  --distance-3xs: 2px;
+  --distance-xxs: 14px;
+  --distance-xs: 16px;
+  --distance-s: 24px;
+  --distance-m: 32px;
+  --distance-l: 46px;
+  --distance-xl: 48px;
+  --distance-xxl: 76px;
+  --distance-3xl: 90px;
+  --distance-4xl: 140px;
+  --distance-5xl: 160px;
+
+  /* font-family */
+  --body-font: "inter";
+  --font-size-xs: 16px;
+  --font-size-s: 20px;
+  --font-size-m: 25px;
+  --font-size-l: 32px;
+  --font-size-xl: 40px;
+  --font-size-xxl: 48px;
+  --font-size-3xl: 64px;
+  --font-size-4xl: 70px;
+  --font-size-5xl: 107px;
+  --font-weight-black: 900;
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+
+  /* line-height */
+  --line-height-xl: 100%;
+  --line-height-l: 100px;
+  --line-height-m: 50px;
+  --line-height-s: 42px;
+  --line-height-xs: 24px;
+}
+
+/* das ist css ohne atomic design */
+
+.wrapper {
+  margin: 0 auto;
+  padding: var(--distance-xl) var(--distance-xs);
+  max-width: 1728px;
+}
+
+@media (min-width: 1234px) {
+  .wrapper {
+    margin: 0 auto;
+    padding: var(--distance-xl) var(--distance-5xl);
+    max-width: 1728px;
+  }
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1409px;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    justify-content: space-between;
+    padding-bottom: var(--distance-xs);
+  }
+}
+
+@media (min-width: 1234px) {
+  .hero {
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: var(--distance-xl);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--distance-xs) var(--distance-xl) var(--distance-xs)
+    var(--distance-xl);
+  border: var(--distance-3xs) solid var(--color-black);
+  background-color: var(--color-white);
+  width: fit-content;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    width: 269px;
+  }
+}
+
+.btn__text {
+  padding: 0 var(--distance-xs) 0 0;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--body-font);
+  line-height: var(--line-height-xl);
+  color: var(--color-black);
+}
+
+.icon {
+  color: var(--color-classic-rose);
+}
+
+h2 {
+  margin: 0 0 var(--distance-m) 0;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--body-font);
+  line-height: var(--line-height-xl);
+  color: var(--color-black);
+  text-align: left;
+  font-size: var(--font-size-xl);
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+p {
+  margin: 0 0 var(--distance-m) 0;
+  font-weight: var(--font-weight-regular);
+  font-style: normal;
+  font-size: var(--font-size-xs);
+  font-family: var(--body-font);
+  line-height: var(--line-height-xs);
+}
+
+img {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--distance-xs);
+}
+
+@media (min-width: 1234px) {
+  img {
+    gap: var(--distance-xl);
+    padding: 0 var(--distance-5xl) 0 0;
+  }
+}
