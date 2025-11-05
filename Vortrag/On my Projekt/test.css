@@ -97,15 +97,6 @@
   background-color: var(--color-white);
 }
 
-.btn--secondary .icon {
-  color: var(--color-black);
-}
-
-.btn--secondary {
-  border: var(--distance-3xs) solid transparent;
-  background-color: var(--color-white);
-}
-
 .headline {
   margin: 0 0 var(--distance-m) 0;
   font-weight: var(--font-weight-bold);
