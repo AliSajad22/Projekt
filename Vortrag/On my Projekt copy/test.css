@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
 :root {
   /* Real Colors */
   --color-classic-rose: #fac8eb;
@@ -46,9 +45,7 @@
   --line-height-s: 42px;
   --line-height-xs: 24px;
 }
-
-/* das ist css ohne atomic design */
-
+/* Wrapper */
 .wrapper {
   margin: 0 auto;
   padding: var(--distance-xl) var(--distance-xs);
@@ -57,16 +54,11 @@
 
 @media (min-width: 1234px) {
   .wrapper {
-    margin: 0 auto;
     padding: var(--distance-xl) var(--distance-5xl);
-    max-width: 1728px;
   }
 }
 
-.visually-hidden {
-  display: none;
-}
-
+/* Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
@@ -94,35 +86,37 @@
   flex-direction: column;
 }
 
-a {
+/* Button (ohne Atomic Design, aber gleiche Optik) */
+button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--distance-xs) var(--distance-xl) var(--distance-xs)
-    var(--distance-xl);
+  padding: var(--distance-xs) var(--distance-xl);
   border: var(--distance-3xs) solid var(--color-black);
   background-color: var(--color-white);
   width: fit-content;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
-  .btn {
+  button {
     width: 269px;
   }
 }
 
-.btn__text {
-  padding: 0 var(--distance-xs) 0 0;
+button span {
+  padding-right: var(--distance-xs);
   font-weight: var(--font-weight-bold);
   font-family: var(--body-font);
-  line-height: var(--line-height-xl);
   color: var(--color-black);
+  line-height: var(--line-height-xl);
 }
 
-.icon {
+button svg {
   color: var(--color-classic-rose);
 }
 
+/* Text & Headline */
 h2 {
   margin: 0 0 var(--distance-m) 0;
   font-weight: var(--font-weight-bold);
@@ -142,12 +136,12 @@ h2 {
 p {
   margin: 0 0 var(--distance-m) 0;
   font-weight: var(--font-weight-regular);
-  font-style: normal;
-  font-size: var(--font-size-xs);
   font-family: var(--body-font);
+  font-size: var(--font-size-xs);
   line-height: var(--line-height-xs);
 }
 
+/* Bild */
 img {
   display: flex;
   flex-direction: column;
