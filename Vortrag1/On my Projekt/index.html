@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>in meinem Projekt</title>
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body>
+    <svg class="visually-hidden" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="arrow-right" width="26" height="23" viewBox="0 0 26 23">
+        <path
+          d="M25.1857 12.5607C25.7714 11.9749 25.7714 11.0251 25.1857 10.4393L15.6397 0.893398C15.0539 0.307611 14.1042 0.307611 13.5184 0.893398C12.9326 1.47919 12.9326 2.42893 13.5184 3.01472L22.0037 11.5L13.5184 19.9853C12.9326 20.5711 12.9326 21.5208 13.5184 22.1066C14.1042 22.6924 15.0539 22.6924 15.6397 22.1066L25.1857 12.5607ZM0.125 13H24.125V10H0.125V13Z"
+          fill="currentColor"
+        />
+      </symbol>
+    </svg>
+    <!-- Atomen von innen noch außen -->
+    <button class="btn btn--primary">
+      <span class="btn__text">Hell Yeah!</span>
+      <svg class="icon" width="26" height="23">
+        <use href="#arrow-right" />
+      </svg>
+    </button>
+    <!-- Headline -->
+    <h2 class="headline headline--large">Component-driven front-end?</h2>
+    <!-- Text -->
+    <p class="copy">
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet.
+    </p>
+    <!-- img -->
+    <img src="img/hero-img.png" alt="img" />
+
+    <!-- Organismus -->
+    <!-- main -->
+    <main class="main">
+      <section class="hero wrapper">
+        <div class="hero__image">
+          <img src="img/hero-img.png" alt="img" />
+        </div>
+        <div class="hero__container">
+          <h2 class="headline headline--large">Component-driven front-end?</h2>
+          <p class="copy">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          </p>
+          <button class="btn btn--primary">
+            <span class="btn__text">Hell Yeah!</span>
+            <svg class="icon" width="26" height="23">
+              <use href="#arrow-right" />
+            </svg>
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
