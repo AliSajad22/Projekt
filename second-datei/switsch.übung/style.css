@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-size: 1rem;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+input , button{
+    all: unset;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    color: black;
+}
+
+button{
+    background-color: rgb(183, 183, 227);
+}
+
