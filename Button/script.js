@@ -19,7 +19,26 @@
 //   console.log("This is the fourth Button");
 // };
 
-const btn = document.querySelectorAll(".btn");
-btn.forEach.onclick = function () {
-  console.log("This is the first Button");
-};
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    switch (index) {
+      case 0:
+        console.log("This is the first Button");
+        break;
+      case 1:
+        console.log("This is the second Button");
+        break;
+      case 2:
+        console.log("This is the third Button");
+        break;
+      case 3:
+        console.log("This is the fourth Button");
+        break;
+      default:
+        console.log("Unknown button");
+    }
+  });
+});
+
