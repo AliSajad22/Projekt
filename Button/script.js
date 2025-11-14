@@ -64,3 +64,18 @@
 // buttons[4].onclick = function () {
 //   console.log("Unknown");
 // };
+
+// const buttons = document.querySelectorAll(".btn");
+
+// const messages = [
+//   "This is the first Button",
+//   "This is the second Button",
+//   "This is the third Button",
+//   "This is the fourth Button",
+//   "Unknown"
+// ];
+
+// buttons.forEach((btn, i) => {
+//   btn.onclick = () => console.log(messages[i]);
+// });
+
