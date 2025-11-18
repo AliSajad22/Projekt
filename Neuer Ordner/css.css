@@ -499,3 +499,7 @@
 .hidden {
   display: none;
 }
+
+.extra-icon {
+  margin-top: 14px;
+}
