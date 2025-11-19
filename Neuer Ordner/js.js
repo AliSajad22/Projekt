@@ -1,24 +1,25 @@
-const btn = document.querySelector(".show-Btn");
-const hiddenItems = document.querySelectorAll(".hidden");
-const svgIcon = btn.querySelector("use");
+function initshowMore() {
+  const showMoreBtn = document.querySelector(".js_show-toggle");
+  const rotatedIcon = document.querySelector(".arrow-down");
+  const toggleItems = document.querySelectorAll(".list");
 
-let expanded = false;
+  let expanded = false;
 
-btn.addEventListener("click", () => {
-  hiddenItems.forEach((item) => {
-    item.style.display = expanded ? "none" : "list-item";
+  showMoreBtn.addEventListener("click", () => {
+    toggleItems.forEach((item) => {
+      item.style.toggle = "expanded" ? "hidden" : "visible";
+      item.style.maxHeight = expanded
+        ? "calc(var(--line-height-s) * 5)"
+        : item.scrollHeight + "px";
+      return;
+    });
+
+    rotatedIcon.classList.toggle("rotated");
+    expanded = !expanded;
   });
-
-  svgIcon.setAttributeNS(
-    "http://www.w3.org/1999/xlink",
-    "xlink:href",
-    expanded ? "#arrow-down" : "#arrow-up"
-  );
-
-  expanded = !expanded;
-});
-
+}
 export default initshowMore;
+
 
 
 // const btn = document.getElementById("show__Btn");
