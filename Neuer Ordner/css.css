@@ -195,6 +195,10 @@
   }
 }
 
+.list {
+  max-height: calc(var(--line-height-s) * 5);
+  overflow: hidden;
+}
 .list__item {
   font-weight: var(--font-weight-regular);
   font-style: normal;
@@ -496,10 +500,11 @@
   }
 }
 
-.hidden {
-  display: none;
+.arrow-down {
+  margin: 14px 0 0 0;
 }
 
-.extra-icon {
-  margin-top: 14px;
+.rotated {
+  margin: 0 0 10px 0;
+  transform: rotate(180deg);
 }
