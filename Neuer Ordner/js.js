@@ -1,24 +1,22 @@
-function initshowMore() {
-  const showMoreBtn = document.querySelector(".js_show-toggle");
-  const rotatedIcon = document.querySelector(".arrow-down");
-  const toggleItems = document.querySelectorAll(".list");
+const button = document.querySelectorAll(".js_show-toggle");
+// if (!button.length) return;
 
-  let expanded = false;
+button.forEach((button) => {
+  button.addEventListener("click", () => {
+    const parent = button.closest(".directory__inner");
+    if (!parent) return;
 
-  showMoreBtn.addEventListener("click", () => {
+    const toggleItems = document.querySelectorAll(".list");
     toggleItems.forEach((item) => {
-      item.style.toggle = "expanded" ? "hidden" : "visible";
-      item.style.maxHeight = expanded
-        ? "calc(var(--line-height-s) * 5)"
-        : item.scrollHeight + "px";
-      return;
+      item.classList.toggle("directory--expanded");
     });
 
-    rotatedIcon.classList.toggle("rotated");
-    expanded = !expanded;
+    const rotatedIcon = document.querySelector(".arrow-down");
+    if (rotatedIcon) {
+      rotatedIcon.classList.toggle("rotated");
+    }
   });
-}
-export default initshowMore;
+});
 
 
 
