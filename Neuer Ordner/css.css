@@ -508,3 +508,7 @@
   margin: 0 0 10px 0;
   transform: rotate(180deg);
 }
+.directory--expanded {
+  max-height: 100%;
+  overflow: visible;
+}
