@@ -535,3 +535,136 @@
     transform: rotate(180deg);
   }
 }
+
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  /* Real Colors */
+  --color-classic-rose: #fac8eb;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Abstract Colors */
+  --color-brand-primary: var(--color-Classic-Rose);
+  --color-dark: var(--color-black);
+  --color-light: var(--color-white);
+
+  /* Distances */
+  --distance-3xs: 2px;
+  --distance-xxs: 14px;
+  --distance-xs: 16px;
+  --distance-s: 24px;
+  --distance-m: 32px;
+  --distance-l: 46px;
+  --distance-xl: 48px;
+  --distance-xxl: 76px;
+  --distance-3xl: 90px;
+  --distance-4xl: 140px;
+  --distance-5xl: 160px;
+
+  /* font-family */
+  --body-font: "inter";
+  --font-size-xs: 16px;
+  --font-size-s: 20px;
+  --font-size-m: 25px;
+  --font-size-l: 32px;
+  --font-size-xl: 40px;
+  --font-size-xxl: 48px;
+  --font-size-3xl: 64px;
+  --font-size-4xl: 70px;
+  --font-size-5xl: 107px;
+  --font-weight-black: 900;
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+
+  /* line-height */
+  --line-height-xl: 100%;
+  --line-height-l: 100px;
+  --line-height-m: 50px;
+  --line-height-s: 42px;
+  --line-height-xs: 24px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: var(--distance-xl) var(--distance-xs);
+  max-width: 1728px;
+}
+
+@media (min-width: 1234px) {
+  .wrapper {
+    margin: 0 auto;
+    padding: var(--distance-xl) var(--distance-5xl);
+    max-width: 1728px;
+  }
+}
+
+.visually-hidden {
+  display: none;
+}
+
+/* img-row */
+
+.img-row {
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.slide {
+  min-width: 50%; /* 2 Logos sichtbar */
+  display: flex;
+  justify-content: center;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 22px;
+  z-index: 10;
+}
+
+.slider-btn.prev { left: 5px; }
+.slider-btn.next { right: 5px; }
+
+
+
+@media (min-width: 768px) {
+  .img-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--distance-m);
+  justify-content: center;
+  align-items: center;
+  max-width: 1409px;
+  justify-content: space-between;
+  }
+
+  .slider-btn { display: none; }
+  .slider-track { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: var(--distance-m);
+  }
+  .slide { min-width: auto; }
+}
+
+
+
+.logo--primary {
+  color: var(--color-black);
+}
+
+.logo--secondary {
+  color: var(--color-classic-rose);
+}
