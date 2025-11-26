@@ -2,51 +2,55 @@
 
 .header {
   position: fixed;
-  width: 92%;
   top: 0;
+  width: 92%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: var(--distance-xs) var(--distance-xs);
+  padding: var(--distance-xs);
   background-color: var(--color-white);
   transition: transform 0.2s ease-in-out;
+  z-index: 1000;
 
   @media (min-width: b.$breakpoint-tablet) {
     position: sticky;
-    padding: var(--distance-xs) var(--distance-xs);
     width: 100%;
+    padding: var(--distance-xs);
   }
 
   @media (min-width: b.$breakpoint-Desktop) {
-    position: sticky;
     padding: var(--distance-xl) var(--distance-5xl);
   }
 
+  /* NAVIGATION */
   &__nav {
     position: fixed;
     top: 0;
     right: 0;
-    display: flex;
-    align-items: center;
-    width: 50%;
+    width: 70%;
     height: 100vh;
     background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
 
     @media (min-width: b.$breakpoint-tablet) {
       position: static;
+      transform: none;
       height: auto;
       width: auto;
-      transform: none;
+      flex-direction: row;
     }
   }
 
   &__nav-list {
+    list-style: none;
     display: flex;
     flex-direction: column;
     gap: var(--distance-xl);
-    list-style: none;
 
     @media (min-width: b.$breakpoint-tablet) {
       flex-direction: row;
@@ -54,49 +58,58 @@
     }
 
     @media (min-width: b.$breakpoint-Desktop) {
-      flex-direction: row;
       gap: var(--distance-xl);
+    }
+
+    li a {
+      text-decoration: none;
+      color: var(--color-black);
+      font-weight: 500;
     }
   }
 
+  /* BURGER ICON */
   .burger-icon {
     position: relative;
-    z-index: 10;
+    z-index: 1010;
     width: var(--distance-m);
     height: var(--distance-s);
     cursor: pointer;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  @media (min-width: b.$breakpoint-tablet) {
-    .burger-icon {
+    @media (min-width: b.$breakpoint-tablet) {
       display: none;
+    }
+
+    .line,
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: var(--color-black);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .line {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
     }
   }
 
-  .burger-icon::before {
-    top: 0;
-  }
-
-  .burger-icon::after {
-    bottom: 0;
-  }
-
-  .line {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .line,
-  .burger-icon::before,
-  .burger-icon::after {
-    content: "";
-    position: absolute;
-    border-radius: 2px;
-    width: 100%;
-    height: 3px;
-    background: var(--color-black);
-  }
-
+  /* NAV TOGGLE */
   .nav-toggle {
     display: none;
   }
