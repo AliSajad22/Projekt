@@ -167,20 +167,26 @@ directories.forEach((directory) => {
 
 
 
-const track = document.querySelector(".slider-track");
-const slides = document.querySelectorAll(".slide");
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+function initSlider() {
+  const track = document.querySelector(".slider-track");
+  const slides = document.querySelectorAll(".slide");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
 
-let index = 0;
-const update = () => track.style.transform = `translateX(${-50 * index}%)`;
+  let index = 0;
+  const update = () => (track.style.transform = `translateX(${-50 * index}%)`);
 
-next.addEventListener("click", () => index < slides.length - 2 && (++index, update()));
-prev.addEventListener("click", () => index > 0 && (--index, update()));
+  next.addEventListener(
+    "click",
+    () => index < slides.length - 2 && (++index, update())
+  );
+  prev.addEventListener("click", () => index > 0 && (--index, update()));
 
-let startX = 0;
-track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-track.addEventListener("touchend", e => {
-  const diff = startX - e.changedTouches[0].clientX;
-  diff > 40 ? next.click() : diff < -40 && prev.click();
-});
+  let startX = 0;
+  track.addEventListener("touchstart", (e) => (startX = e.touches[0].clientX));
+  track.addEventListener("touchend", (e) => {
+    const diff = startX - e.changedTouches[0].clientX;
+    diff > 40 ? next.click() : diff < -40 && prev.click();
+  });
+}
+export default initSlider;
