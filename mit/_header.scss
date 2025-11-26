@@ -1,0 +1,120 @@
+@use "../utils/breakpoints" as b;
+
+.header {
+  position: fixed;
+  width: 92%;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--distance-xs) var(--distance-xs);
+  background-color: var(--color-white);
+  transition: transform 0.2s ease-in-out;
+
+  @media (min-width: b.$breakpoint-tablet) {
+    position: sticky;
+    padding: var(--distance-xs) var(--distance-xs);
+    width: 100%;
+  }
+
+  @media (min-width: b.$breakpoint-Desktop) {
+    position: sticky;
+    padding: var(--distance-xl) var(--distance-5xl);
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    background-color: var(--color-white);
+    transform: translateX(100%);
+
+    @media (min-width: b.$breakpoint-tablet) {
+      position: static;
+      height: auto;
+      width: auto;
+      transform: none;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--distance-xl);
+    list-style: none;
+
+    @media (min-width: b.$breakpoint-tablet) {
+      flex-direction: row;
+      gap: var(--distance-s);
+    }
+
+    @media (min-width: b.$breakpoint-Desktop) {
+      flex-direction: row;
+      gap: var(--distance-xl);
+    }
+  }
+
+  .burger-icon {
+    position: relative;
+    z-index: 10;
+    width: var(--distance-m);
+    height: var(--distance-s);
+    cursor: pointer;
+  }
+
+  @media (min-width: b.$breakpoint-tablet) {
+    .burger-icon {
+      display: none;
+    }
+  }
+
+  .burger-icon::before {
+    top: 0;
+  }
+
+  .burger-icon::after {
+    bottom: 0;
+  }
+
+  .line {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .line,
+  .burger-icon::before,
+  .burger-icon::after {
+    content: "";
+    position: absolute;
+    border-radius: 2px;
+    width: 100%;
+    height: 3px;
+    background: var(--color-black);
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-toggle:checked ~ .header__nav {
+    transform: translateX(0);
+  }
+
+  .nav-toggle:checked + .burger-icon .line {
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle:checked + .burger-icon::before {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .nav-toggle:checked + .burger-icon::after {
+    opacity: 0;
+  }
+}

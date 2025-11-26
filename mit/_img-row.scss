@@ -1,0 +1,79 @@
+@use "../utils/breakpoints" as b;
+
+@use "../utils/mixin" as f;
+
+.img-row {
+  position: relative;
+  overflow: hidden;
+
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    display: flex;
+    justify-content: center;
+    min-width: 50%;
+  }
+
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    background: transparent;
+    border: none;
+    transform: translateY(-100%);
+    z-index: 10;
+  }
+
+  @media (min-width: b.$breakpoint-tablet) {
+    .slide {
+      min-width: 33%;
+    }
+  }
+
+  @media (min-width: b.$breakpoint-Desktop) {
+    .slider-track {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--distance-m);
+      min-width: auto;
+      max-width: 1409px;
+    }
+    .slide {
+      min-width: auto;
+    }
+
+    .slider-btn {
+      display: none;
+    }
+  }
+
+  .logo--primary {
+    color: var(--color-black);
+  }
+
+  .logo--secondary {
+    color: var(--color-classic-rose);
+  }
+
+  .slider-btn.prev {
+    left: 2px;
+    margin-top: var(--distance-xxs);
+  }
+
+  .slider-btn.next {
+    right: 2px;
+    margin-top: var(--distance-xxs);
+  }
+
+  .icon__right-arrow {
+    transform: rotate(90deg);
+  }
+
+  .icon__left-arrow {
+    transform: rotate(-90deg);
+  }
+}
