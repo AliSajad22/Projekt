@@ -1,79 +1,94 @@
 @use "../utils/breakpoints" as b;
-
 @use "../utils/mixin" as f;
+
+
 
 .img-row {
   position: relative;
   overflow: hidden;
+  width: 100%;
+
 
   .slider-track {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
+    will-change: transform;
+    gap: 0; 
   }
 
+ 
   .slide {
+    flex: 0 0 50%;
     display: flex;
     justify-content: center;
-    min-width: 50%;
+    align-items: center;
   }
 
-  .slider-btn {
-    position: absolute;
-    top: 50%;
-    background: transparent;
-    border: none;
-    transform: translateY(-100%);
-    z-index: 10;
-  }
-
-  @media (min-width: b.$breakpoint-tablet) {
-    .slide {
-      min-width: 33%;
-    }
-  }
-
-  @media (min-width: b.$breakpoint-Desktop) {
-    .slider-track {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--distance-m);
-      min-width: auto;
-      max-width: 1409px;
-    }
-    .slide {
-      min-width: auto;
-    }
-
-    .slider-btn {
-      display: none;
-    }
-  }
-
+  
   .logo--primary {
     color: var(--color-black);
   }
-
   .logo--secondary {
     color: var(--color-classic-rose);
   }
 
-  .slider-btn.prev {
-    left: 2px;
-    margin-top: var(--distance-xxs);
+  
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: var(--distance-xxs);
+
+    svg {
+      pointer-events: none;
+    }
   }
 
-  .slider-btn.next {
-    right: 2px;
-    margin-top: var(--distance-xxs);
+  .prev {
+    left: 4px;
+  }
+  .next {
+    right: 4px;
   }
 
   .icon__right-arrow {
     transform: rotate(90deg);
   }
-
   .icon__left-arrow {
     transform: rotate(-90deg);
+  }
+
+  
+  @media (min-width: b.$breakpoint-tablet) {
+    .slide {
+      flex: 0 0 33%; 
+    }
+  }
+
+
+  @media (min-width: b.$breakpoint-Desktop) {
+    overflow: visible;
+
+    .slider-track {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--distance-m);
+      max-width: 1400px;
+      margin-inline: auto;
+      transform: none !important;
+    }
+
+    .slide {
+      flex: 0 0 auto;
+      min-width: 8rem;
+    }
+
+    .slider-btn {
+      display: none; 
+    }
   }
 }
