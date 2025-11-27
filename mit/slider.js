@@ -79,4 +79,27 @@ function initSlider() {
     slider.scrollLeft = scrollLeft - walk;
   });
 
+
+  const slider = document.querySelector(".slider-track");
+  let isDown = false,
+    prevPageX,
+    prevScrollLeft;
+
+  const dragStar = () => {
+    isDragStar = true;
+    prevPageX = e.pageX;
+    prevScrollLeft = slider.scrollLeft;
+  };
+
+  const dragging = (e) => {
+    if (!isDragStar) return;
+    e.preventDefault();
+    let positionDiff = e.pageX - prevPageX;
+    slider.scrollLeft = prevScrollLeft - positionDiff;
+  };
+
+  const dragStop = () => {
+    isDragStar = false;
+  };
+
 export default initSlider;
